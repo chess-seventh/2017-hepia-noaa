@@ -16,11 +16,9 @@
 # TODO List:
 
 
-[ ] .. UML diagram
-[ ] .. Powerpoint
-[ ] .. Latex Documentation
-[ ] .. Python or Matlab code ?
-[ ] .. Acquisition
-
-
-[ ] .. Beers...
+- [ ] .. UML diagram
+- [ ] .. Powerpoint
+- [ ] .. Latex Documentation
+- [ ] .. Python or Matlab code ?
+- [ ] .. Acquisition
+- [ ] .. Beers...
