@@ -1,7 +1,7 @@
 # APT Decoder
 
 ## Usage
-    ```bash
+    ```shell
     python wav-decoder.py soundfile.wav image_out.png
     ```
 
