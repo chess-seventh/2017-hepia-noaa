@@ -1,17 +1,19 @@
 # APT Decoder
 
 ## Usage
-    ```
+
+```
     python wav-decoder.py soundfile.wav image_out.png
-    ```
+```
 
 ## Virtualenv
 
-    - `virtualenv apt-venv`
-    - `source apt-venv/bin/activate`
-    - `pip install -r requirements.txt`
-    - `python wav-decoder.py soundfile.wav image_out.png`
-    - to quit the virtualenv, you can simply close the terminal or type `deactivate`.
+`virtualenv apt-venv` as
+`source apt-venv/bin/activate`
+`pip install -r requirements.txt`
+`python wav-decoder.py soundfile.wav image_out.png`
+to quit the virtualenv, you can simply close the terminal or type `deactivate`.
+
 
 
 # TODO:
