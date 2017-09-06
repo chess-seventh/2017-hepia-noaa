@@ -1,9 +1,9 @@
 # APT Decoder
 
 ## Usage
-
+    ```bash
     python wav-decoder.py soundfile.wav image_out.png
-
+    ```
 
 ## Virtualenv
 
