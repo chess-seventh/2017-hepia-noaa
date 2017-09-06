@@ -29,13 +29,13 @@ class WavTransformer(object):
         self.framerate = None
 
         self.original_file = fn
-        self.workfile = "workfile.wav"
+        self.workfile = "./workfile.wav"
+
+        self.signal = None
 
         self.run_tests()
 
-        if not self.monofile and not self.framerate:
-            if not self.standardize():
-                print("something went wrong in standardize().")
+        self.standardize()
 
 
     def standardize(self):
@@ -44,12 +44,14 @@ class WavTransformer(object):
         """
         try:
             if not self.monofile:
-                if not to_mono():
+                if not self.to_mono():
                     print("something failed while converting to mono.")
 
             if not self.framerate:
                 if not self.resample():
                     print("something went wrong with the resampling.")
+            return True
+
         except:
             return False
 
@@ -60,24 +62,27 @@ class WavTransformer(object):
         with wave.open(self.original_file, 'rb') as cur_file:
             if cur_file.getframerate() is not self.RATE:
                 self.framerate = False
+            else:
+                self.framerate = True
 
             if cur_file.getnchannels() is not 1:
                 self.monofile = False
+            else:
+                self.monofile = True
 
     def to_mono(self):
         """
         Stereo to Mono converter.
         """
         try:
-            with wave.open(self.workfile, 'wb') as mono:
-                print("to mono !")
-                mono.setparams(cur_file.getparams())
-                mono.setnchannels(1)
-                mono.writeframes(audioop.tomono(cur_file.readframes(
-                    float('inf')), cur_file.getsampwidth(), 1, 1))
-                self.monotest = True
-            return True
-
+            with wave.open(self.original_file, 'rb') as cur_file:
+                with wave.open(self.workfile, 'wb') as mono:
+                    mono.setparams(cur_file.getparams())
+                    mono.setnchannels(1)
+                    mono.writeframes(audioop.tomono(cur_file.readframes(float('inf')), cur_file.getsampwidth(), 1, 1))
+                    print("to mono !")
+                    self.monotest = True
+                    return True
         except:
             return False
 
@@ -107,6 +112,7 @@ class WavTransformer(object):
         Decoder function from wav to png.
         """
         try:
+
             hilbert = scipy.signal.hilbert(self.signal)
             filtered = scipy.signal.medfilt(numpy.abs(hilbert), 5)
             reshaped = filtered.reshape(len(filtered) // 5, 5)
@@ -143,5 +149,4 @@ if __name__ == '__main__':
     else:
         outfile = None
 
-    if not WavTransformer.decode(outfile):
-        print("Failed. Exiting now. Try again, insert coins.")
+    WavTransformer.decode(outfile)
