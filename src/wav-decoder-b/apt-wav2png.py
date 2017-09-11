@@ -16,7 +16,7 @@ NOAA_LINE_LENGTH = 2080
 def decode(rate, signal):
     hilbert = scipy.signal.hilbert(signal)
     filtered = scipy.signal.medfilt(numpy.abs(hilbert), 5)
-    reshaped = filtered.reshape(len(filtered) / 5, 5)
+    reshaped = filtered.reshape(len(filtered) // 5, 5)
     digitized = _digitize(reshaped[:, 2])
     lines = int(len(digitized) / NOAA_LINE_LENGTH) # Get the amount of lines captured
     return digitized.reshape((lines, NOAA_LINE_LENGTH)) # Reshape the matrix
@@ -40,7 +40,7 @@ def wav2png(wav_filename, png_filename):
     (rate, signal) = scipy.io.wavfile.read(wav_filename)
     truncate = rate * int (len(signal) // rate)
     signal = signal[:truncate]
-    m = decode(rate, signal) 
+    m = decode(rate, signal)
     save_image(m, png_filename)
 
 if __name__ == '__main__':
