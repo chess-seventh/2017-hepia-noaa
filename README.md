@@ -8,23 +8,36 @@
 
 [Description]
 
+
+## Decode WAV
+
 ```python
-class WavTransformer(object):
+class WAVDecoder(object):
     """
     Object to handle the a WAV file.
-    Runs a series of tests to make sure the file is proper for handling.
+    Instanciates the WAVFormatter to be sure that the file is healthy for handling
     """
 ```
 
-[Description]
+
+```python
+class WAVFormatter(object):
+    """
+    Class to run a series of tests to make sure the file is proper for handling.
+    """
+```
 
 
 # TODO List:
 
 
 - [ ] .. UML diagram
-- [ ] .. Powerpoint
 - [ ] .. Latex Documentation
-- [ ] .. Python or Matlab code ?
-- [ ] .. Acquisition
-- [ ] .. Beers...
+- [x] .. Powerpoint
+
+
+## Done
+
+
+- [x] .. Python code
+- [x] .. Acquisition
