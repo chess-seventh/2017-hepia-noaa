@@ -12,7 +12,7 @@
 
 - `virtualenv venv` to create a Python Virtual Environment.
 
-- `source apt-venv/bin/activate`
+- `source venv/bin/activate`
 
 - `pip install -r requirements.txt`
 
