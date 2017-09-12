@@ -5,7 +5,7 @@
 ## Usage
 
 ```
-    python wav-decoder.py soundfile.wav image_out.png
+    python main.py soundfile.wav image_out.png
 ```
 
 ## Virtualenv
