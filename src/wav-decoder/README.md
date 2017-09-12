@@ -1,4 +1,6 @@
-# APT Decoder
+[![Build Status](https://travis-ci.org/chess-seventh/2017-hepia-noaa.svg?branch=master)](https://travis-ci.org/chess-seventh/2017-hepia-noaa)
+
+# WAV Decoder and WAV Formatter
 
 ## Usage
 
@@ -22,11 +24,17 @@
 
 # TODO:
 
-- [ ] .. Class to verify that the output has `jpg`,`png`,`bmp` format / Mime-Type.
-- [ ] .. Refactor `def decode(self)` function.
-- [ ] .. PEP-8 style guide refactoring.
-- [ ] .. Logging module (?).
-- [ ] .. Check with previous step on how to plug it in to streamline it.
-- [ ] .. Drink Beers !
 
+- [ ] .. Class to verify that the output has `jpg`,`png`,`bmp` format / Mime-Type.
+- [ ] .. Check with previous step on how to plug it in to streamline it.
+
+
+# Done
+
+
+- [x] .. Refactor `def decode(self)` function.
+- [x] .. PEP-8 style guide refactoring.
+- [x] .. Create class to health check
+- [x] .. Create class to handle main task
+- [x] .. Implement both classes and run tests
 
