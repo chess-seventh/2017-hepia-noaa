@@ -1,7 +1,0 @@
-language: python
-python:
-- 3.6
-install:
-- pip install -r ./src/wav-decoder/requirements.txt
-script:
-- pytest -q src/wav-decoder/run_test.py
