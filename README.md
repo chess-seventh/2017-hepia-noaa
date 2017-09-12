@@ -14,7 +14,7 @@
 ```python
 class WAVDecoder(object):
     """
-    Object to handle the a WAV file.
+    Object to handle the a WAV file to decode.
     Instanciates the WAVFormatter to be sure that the file is healthy for handling
     """
 ```
@@ -32,12 +32,12 @@ class WAVFormatter(object):
 
 
 - [ ] .. UML diagram
-- [ ] .. Latex Documentation
+- [ ] .. Sphinx Documentation for Python
 - [x] .. Powerpoint
 
 
 ## Done
 
 
-- [x] .. Python code
+- [x] .. Python code for WAV Decoder
 - [x] .. Acquisition
