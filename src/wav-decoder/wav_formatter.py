@@ -45,7 +45,7 @@ class WAVFormatter(object):
                     print('something failed in writing resampled file.')
 
             if f.getnchannels() is not 1:
-                if not to_mono():
+                if not self.to_mono():
                     print('something failed.')
 
     def write_resampled(self):
